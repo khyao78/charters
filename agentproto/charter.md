@@ -20,53 +20,39 @@ The scope of the working group includes agent-to-agent and agent-to-tools commun
 
 # Deliverables
 
-The working group will produce the following standards track and informational documents. The work on these deliverables is expected to proceed in parallel.
+The working group will produce the following standards track and informational documents.
 
-## AI Agent Session Protocol (Standards Track)
+## Agent Context Propagation Protocol (Standards Track)
 
-A standards-track protocol for creation and maintenance of communication sessions between AI agents, or between AI agents and tools. These sessions allow for the bidirectional exchange of data, including model context, tool call results, and chat messages.
+A standards-track protocol for the propagation of interaction context across trust boundaries and across modalities, enabling multiparty agent communications. This protocol serves as a signaling foundation for context continuity and correlation in user-to-agent, agent-to-agent, and agent-to-tool interactions, allowing context to follow participants as they move between devices or over time.
 
-The session protocol will:
+The specification will cover two parts:
 
-* Provide timed (short or long-lived) session management, enabling the establishment, update, context handling, and termination of the services of interacting agents and tools.
-* Facilitate highly scalable and reliable session management, capable of surviving network and server failures while supporting graceful recovery.
-* Support concurrent exchange of real-time data (such as voice and video), semi-real-time data (such as chat), and non-real-time data (such as tool call inputs and outputs).
-* Supports point-to-point and point-to-multipoint communication topologies.
+* Context management primitives: providing context correlation, enabling agents to link related interactions across participants and over time; full context lifecycle management, including establishment, update, termination, and revocation of propagation relationships; and defining propagation behavior across participants, including handling of failures and unreachable parties.
 
-This protocol is expected to be a foundational building block on top of which additional protocols can be built. It is anticipated that the AI Agent session protocol will utilize modern IETF application transfer protocols, such as QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases. The protocol must also be usable by other application layer protocols with the appropriate layering and extension points enabling its adoption by any application. Examples of protocols that can utilize this include the existing de facto standard agent communication protocols such as the MCP and A2A protocols being worked on by the Linux Foundation.
+* Transport bindings: specifying how the context and its associated metadata are carried over modern IETF application transfer protocols, such as QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
 
-## AI Agent Protocol Framework (Standards Track)
+The protocol is designed to be used by existing application-layer agent communication protocols (e.g., MCP and A2A maintained the by Linux Foundation) through well-defined extension points, rather than replacing them.
 
-A standards-track framework that identifies the key building blocks and defines the protocol suite for interoperable agent-to-agent and agent-to-tool communications. The framework provides an architectural overview and highlights areas for subsequent protocol specification work.
+## Framework (Informational)
 
-This is an evolving work item that can proceed in parallel with the development of specific protocol deliverables associated with the identified architectural blocks. It will iteratively integrate both existing and currently missing protocol building blocks in successive steps, until all core modules are fully incorporated.
+This informational framework will:
 
-The framework will:
+* Define the terms used by the protocol deliverable.
 
-* Enable AI Agents to select and collaborate with other AI Agents on the Internet or intranet, deployed in various interconnected domains and ecosystems, to execute simple or complex tasks.
-* Allow multi-modal collaboration using varied data formats such as text, images, video, audio, and structured data with exchange of multi-modal contexts.
-* Describe the functional blocks, their relationships, and the mechanisms for structured, semi-structured, and multi-modal information exchange to support collaborative tasks across domains.
-* Describe agent-specific integration for agent authentication and authorization about how existing and emerging  mechanisms are composed and applied in AI agent scenarios, including the confirmation and evidence requirements for AI agent operations.
-* Enable an AI Agent to create an independent identity, obtain and exchange access tokens with fine-grained, behavior-driven scopes bound to the specific operations that it is permitted to perform on behalf of the user. Agent authorization needs to account for dynamic behavioral boundaries, including conditional and context-dependent privileges that may vary across interactions and provide a way of requesting confirmation for operations that are about to be performed by AI agents. Any extensions to OAuth protocol mechanisms required to support agent authorization are expected to be developed within the OAuth working group. Any extensions required for independent AI agent identity are expected to be developed within the wimse working group.
-* Identify the protocol suite covering session management, transport, security, and identity building blocks.
-* The framework may be delivered as multiple standards-track documents, as the working group determines based on the structure and maturity of the building blocks.
+* Describe basic use cases and requirements that derive the context management primitives covered by the protocol deliverable.
 
-## Use Cases, Gap Analysis, and Requirements (Informational)
-
-Foundational work will be documented through a set of informational Internet-Drafts covering:
-
-* **Use cases** focused on Agent-to-agent and Agent-to-tool communications, used to verify the suitability of existing protocols and the protocols being developed.
-* **Gap analysis and requirements** based on examination of existing de facto standard protocols implemented in open-source projects, from which necessary protocol requirements are derived.
+* Describe the functional blocks the protocol deliverable assume, and their relationships.
 
 # Coordination
 
-This working group is expected to closely coordinate with other related IETF working groups:
+This working group is expected to closely coordinate with other related IETF working groups on dependencies of the framework and the agent context propagation protocol, including security, transport, and discovery aspects:
 
-* **Security:** Web Authorization Protocol (OAuth), webbotauth, WIMSE — on identity, authorization, and security considerations.
-* **Transport:** WebTransport, MoQ, QUIC, TSVWG — on data transport and session management.
-* **Discovery and Operations:** INT area, OPS area — on agent discovery and operational considerations.
+* **Security:** Web Authorization Protocol (OAuth), webbotauth, WIMSE - on identity, authorization, and security considerations.
+* **Transport:** WebTransport, MoQ, QUIC, TSVWG - on data transport.
+* **Discovery and Operations:** INT area, OPS area - on agent discovery and operational considerations.
 
-If the working group needs any changes to or extensions of protocols specified by other working groups, those issues will be raised with the relevant working groups for decisions on how best to handle them. The group is also expected to maintain close communication with open-source projects running under the Linux Foundation.
+If the working group needs any changes to or extensions of protocols specified by other working groups, those issues will be raised with the relevant working groups for decisions on how best to handle them.
 
 
 # Out of Scope
