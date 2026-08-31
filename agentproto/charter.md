@@ -30,7 +30,7 @@ The specification will cover two parts:
 
 * Context management primitives: providing context correlation, enabling agents to link related interactions across participants and over time; full context lifecycle management, including establishment, update, termination, and revocation of propagation relationships; and defining propagation behavior across participants, including handling of failures and unreachable parties.
 
-* Transport bindings: specifying how the context and its associated metadata are carried over modern IETF application transfer protocols, such as QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
+* Transport bindings: specifying how the multimodal context and its associated metadata are carried over modern IETF application transfer protocols, such as QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
 
 The protocol is designed to be used by existing application-layer agent communication protocols (e.g., MCP and A2A maintained the by Linux Foundation) through well-defined extension points, rather than replacing them.
 
