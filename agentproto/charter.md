@@ -1,8 +1,8 @@
 # Agent Communication Protocols (agentproto) Proposed Charter
 
-The Agent Communication Protocols (agentproto) Working Group will work on defining protocol building blocks for enabling interoperability for AI Agent applications across the Internet. An AI agent is an autonomous, adaptive intelligent software system that uses AI models to complete a specific task. AI Agents often interact with users via chat or voice, performing tasks based on the flow of the conversation. To complete tasks on behalf of a human user or another AI agent, they can independently make decisions, execute actions, and interact with other AI agents and tools.
+An AI agent is an autonomous software system powered by AI models that interacts with users and other agents through multiple modalities, including voice, video, and text, and is capable of independent decision-making, tool invocation, and task completion. The protocol requirements for user-to-agent, agent-to-agent, and agent-to-tool interactions are consistent - all centered around the correlation and maintenance of agentic dialogs and the propagation of dialog context. The dialog context refers to the protocol-level metadata that enables the continuity and correlation of an agentic dialog, which is not the application-level data such as memory or other information that is fed into AI models.
 
-With the expansion of communication over the Internet between AI Agents and external resources that can be tools or other AI Agents, reliable communications across platforms and vendors becomes increasingly important. The role of the agentproto working group is to facilitate such interoperability so that tools and agents can be provided by multiple vendors.
+The scope of Agent Communication Protocols (agentproto) Working Group is to define a common baseline agentic dialog management protocol and build a framework to integrate related protocol building blocks, enabling interoperability across platforms and vendors.
 
 # Key Considerations
 
@@ -10,13 +10,9 @@ There are several considerations that are unique to AI Agent applications that n
 
 - AI Agents act as autonomous software entities that may need to be authenticated independently of the users they represent. Establishing verifiable agent identity that is distinct from user identity enables independent revocation of agent access, scoping of agent permissions to a subset of user permissions, and auditability of agent-initiated actions distinct from user-initiated actions.
 
-- AI Agents possess unique and specialized functional capabilities which can be enhanced by collaboratively working with other agents or tools. This brings new considerations for how these specialized capabilities can be leveraged to select AI agents or tools for collaboration, initiate communication and maintain interactions, including across network boundaries.
+- Interactions of AI Agents with users, other AI Agents, and tools can be long-lived, may involve multiple parties and parallel sub-tasks,utilize significant amounts of dialog context across various modalities (text, audio, video), and require very low latency (including fast barge/interruption times). This introduces new considerations around dialog correlation, reliability, transport session management, and data transport.
 
-- Interactions of AI Agents with users, other AI Agents, and tools can be long-lived, utilize significant amounts of context across various modes (text, audio, video), and require very low latency (including fast barge/interruption times). This introduces new considerations around reliability, transport session management, and data transport.
-
-- To protect data exchanged between AI Agents (and between AI Agents and tools) over potentially untrusted networks, particularly when handling sensitive information (such as personal data or conversational context), mechanisms are required to establish and verify identity, ensure confidentiality, integrity, authenticity of the exchanged data, and delegated authorization across AI Agent chains. This introduces new considerations around protocol-level security and privacy mechanisms.
-
-The scope of the working group includes agent-to-agent and agent-to-tools communication protocols. The working group will document common use-cases to derive requirements for these protocols. Human-agent communication protocols — specifically the protocol-level mechanisms for establishing sessions, negotiating modalities, and exchanging multimodal data between a human user and an AI Agent — are also in scope.
+- To protect data exchanged between AI Agents (and between AI Agents and tools) over potentially untrusted networks, particularly when handling sensitive information (such as personal data or dialog context), mechanisms are required to establish and verify identity, ensure confidentiality, integrity, authenticity of the exchanged data, and delegated authorization across AI Agent chains. This introduces new considerations around protocol-level security and privacy mechanisms.
 
 # Deliverables
 
