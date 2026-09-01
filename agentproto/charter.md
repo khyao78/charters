@@ -20,33 +20,34 @@ The scope of the working group includes agent-to-agent and agent-to-tools commun
 
 # Deliverables
 
-The working group will produce the following standards track and informational documents.
+The working group will produce the following standards-track and informational documents. The work on these deliverables is expected to proceed in parallel.
 
-## Agent Context Propagation Protocol (Standards Track)
+## Agentic Dialog Management Protocol (Standards Track)
 
-A standards-track protocol for the propagation of interaction context across trust boundaries and across modalities, enabling multiparty agent communications. This protocol serves as a signaling foundation for context continuity and correlation in user-to-agent, agent-to-agent, and agent-to-tool interactions, allowing context to follow participants as they move between devices or over time.
+A standards-track protocol for the propagation of dialog context across trust boundaries and across modalities, enabling multiple agent communications. This protocol serves as a foundation for dialog continuity and correlation in user-to-agent, agent-to-agent, and agent-to-tool interactions, allowing dialog context to follow participants as they move between devices/hosts or over time.
 
-The specification will cover two parts:
+The specification will define:
 
-* Context management primitives: providing context correlation, enabling agents to link related interactions across participants and over time; full context lifecycle management, including establishment, update, termination, and revocation of propagation relationships; and defining propagation behavior across participants, including handling of failures and unreachable parties.
+* Dialog management primitives, and the primitives can:
+    - Provide dialog correlation, enabling agents to associate related interactions across participants and over time.
+    - Manage full dialog lifecycle, including establishment, modification, termination, and revocation of propagation relationships.
+    - Define dialog context propagation behavior across participants, including handling of failures and unreachable parties.
 
-* Transport bindings: specifying how the context and its associated metadata are carried over modern IETF application transfer protocols, such as QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
+* Transport bindings: specifying how the dialog context with its associated metadata are carried over modern IETF application transfer protocols, such as QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
 
-The protocol is designed to be used by existing application-layer agent communication protocols (e.g., MCP and A2A maintained the by Linux Foundation) through well-defined extension points, rather than replacing them.
+The protocol is designed to be usable by existing application-layer agent communication protocols (e.g., MCP and A2A maintained the by Linux Foundation) through well-defined extension points, rather than replacing them.
 
 ## Framework (Informational)
-
 This informational framework will:
-
 * Define the terms used by the protocol deliverable.
-
-* Describe basic use cases and requirements that derive the context management primitives covered by the protocol deliverable.
-
 * Describe the functional blocks the protocol deliverable assume, and their relationships.
+
+## Use Cases and Requirements (Informational)
+* Describe basic use cases and requirements that derive the dialog management primitives covered by the protocol deliverable.
 
 # Coordination
 
-This working group is expected to closely coordinate with other related IETF working groups on dependencies of the framework and the agent context propagation protocol, including security, transport, and discovery aspects:
+This working group is expected to closely coordinate with other related IETF working groups on dependencies of the framework and the agentic dialog management protocol, including security, transport, and discovery aspects:
 
 * **Security:** Web Authorization Protocol (OAuth), webbotauth, WIMSE - on identity, authorization, and security considerations.
 * **Transport:** WebTransport, MoQ, QUIC, TSVWG - on data transport.
