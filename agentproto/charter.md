@@ -20,7 +20,7 @@ The scope of the working group includes agent-to-agent and agent-to-tools commun
 
 # Deliverables
 
-The working group will produce the following standards track and informational documents.
+The working group will produce the following standards track and informational documents. The work on these deliverables may proceed in parallel.
 
 ## Agent Context Propagation Protocol (Standards Track)
 
