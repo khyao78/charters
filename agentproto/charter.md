@@ -36,7 +36,7 @@ The specification will define:
 
 The protocol is designed to be usable by existing application-layer agent communication protocols (e.g., MCP and A2A maintained by the Linux Foundation) through well-defined extension points, rather than replacing them.
 
-## Framework (Informational)
+## Reference Architecture (Informational)
 
 To ensure interoperability in agent communications, this informational framework integrates related protocol building blocks that the agentic dialog management protocol can reuse, including identity, authentication, authorization, and encryption, rather than defining new ones. This framework will:
 
