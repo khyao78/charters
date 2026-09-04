@@ -32,7 +32,9 @@ The specification will define:
     - Manage full dialog lifecycle, including establishment, modification, termination, and revocation of propagation relationships.
     - Provide scalable and resilient operation with recovery from network and server failures, and handle unreachability.
 
-* Transport bindings: specifying how the dialog context with its associated metadata are carried over modern IETF application transfer protocols, such as HTTP, QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
+* Transport bindings: specifying how the dialog context with its associated metadata are carried over one or more modern IETF protocols, such as HTTP, QUIC, WebTransport, WebRTC or MOQ, based on the anticipated use cases.
+
+* The working group shall describe a set of evaluation criteria for selecting one or more IETF protocols to support concrete bindings.
 
 The protocol is designed to be usable by existing application-layer agent communication protocols (e.g., MCP and A2A maintained by the Linux Foundation) through well-defined extension points, rather than replacing them.
 
