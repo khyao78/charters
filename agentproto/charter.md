@@ -38,7 +38,7 @@ The protocol is designed to be usable by existing application-layer agent commun
 
 ## Reference Architecture (Informational)
 
-To ensure interoperability in agent communications, this informational framework integrates related protocol building blocks that the agentic dialog management protocol can reuse, including identity, authentication, authorization, and encryption, rather than defining new ones. This framework will:
+To ensure interoperability in agent communications, this informational document describes related protocol building blocks that the agentic dialog management protocol can reuse, including identity, authentication, authorization, and encryption, rather than defining new ones. This reference architecture will:
 
 * Define the terms used by the protocol deliverable.
 * Describe the functional blocks the protocol deliverable assume, and their relationships.
